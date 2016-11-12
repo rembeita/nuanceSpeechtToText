@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "speechtestnuance",
+  "private_key_id": "51452ce41c22dc8ef5dc5fe0308e2152ed9cc488",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDZ/ZSLMdnq3PWa\n9fQrk6yy0VSnGzYelSASBolonT9TRiR3Nvt8IRp3eTZK6PnscJPJiZREVScvs8tV\nOfm48VMzT0IXqiQQoFACz9+jfoCXlz4rUtZ93mVAseCQSOB2QsukZMTF8uldX6YB\nAPrFE0hgV+Pgefyd0r//gBll7Rg69wHFlciqRn+2BFMIOTgljxVFODNVHo07pt62\n8CIbWW0P3cxHZvkIfdskQJIFPeyhePf8lh7Iy7aFc73ZcHrbqa+4THluFdFW0j+c\n/UIX0113m6Z0swKDkl6fG5miu+/n66BBHTCWJDmmIzZQiS79v4QDTd59GPcGCZ3g\nv1i7B6qjAgMBAAECggEAZ0QPSFlXSEFgQAZfov0UBKnRlk/3tUkjpiZelaZYR1Sl\nFayAOe9coFhVdesj6fPyrrhz+mL0a06a9ka+m/QGW/oh7x/0ccPf41UiNktJE4bc\nNp3JalseUCVzoiZD3wIJglkSNku6bTdQZo1WPmHCGZHJK5/eIc2ikqDWZ0iH//X/\njMuqGzuzpmjbt2nLBAVRqWdhUc8FA/KrbLuz9p8QERqUp568+QcjrKYjaj9Tlfaj\nNNgTZc5+LXCaq1ux3x1nJQLWrUTzl9MZOrfAOFMLTEmII3kwcVpAaxlCipFuSVRK\nl+cRSq8lEW7s/TZP3xReyBm1pkFOl/vAVyYUisl5cQKBgQDxQ/6L/NK/IMD5s/5d\nFMFVhPnEXde2B+y1KcdHdIZrRrLm61PgvDV61aDK0hmTu1+tXcnJUTxBMXSrXaOb\nyJq4RRCNeXkLK+hN90Y8An4bCmCqgrB4tQ1U7AOeyfDR6gE9M5T2Q7+FrXgsr5vD\nhDZh1Mitu2U5FuK4evQXFiXQzwKBgQDnTbKwLX62QiQUaHxXLvKcSbWx9jO0GY66\nfCn0C8+Jvd2NU1bJzLPMDIK4I8QBHp0mLZKHUoEpAVmo9Ct9iT5gwy+ON07HJpZb\nA5gHOHubDvDVi2NLqWQnySVKpsIKKaFUW3EH3AM9RrCw1h5oWKpypAC3DGr9f7cH\nzuzA5y217QKBgDPGU6nW56L8dG0ho0R2X8bqcm8hdFkr+jAmdw1uhCohUeMcPTPN\nL+zcS1U7ISIC49Vgex0owbV7132u6p1Tv2Ar8hFqL/+lvIR+vCPEpStIXtY4lYZR\n1DqVK3G4BGYHwZxQpXbzsvYM8+0jAlpC1SjJcQdXX7GQp7bPK/KIXjUhAoGAdfq3\nrg1GmIhcBtzUr1OPBBDE0KUX8kEnAA/dBlIP5d4mZ7OejQgQnX+0HWCA1WFcHuEX\n4FZA8z1xEjCZDks2ufxVAWFMmWAhSQMoRGaXBZw1U3bpiuo33+NFVjKAvtZFJ9YM\nbUnXjSXFci2FDQxMxHTKuJNo7yx5m038jNheBHECgYEA2JgjxcDxj9UNZJxuqpQ8\n1LAn2DWq8HVxGUUYSx9N8U/lbWzIDAuH9iw0bE40MUmXpfkn4MDSlcQJUs7yAV4w\nvUgQO9AMats7wlrxnBgKfPnYvAMuDTgLupOOgFxWnL/7gV1W4K+WNWT+8y69Gzgi\nT/BjuLPfSr6lyN29Ns6SyIY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "googlespeechservice@speechtestnuance.iam.gserviceaccount.com",
+  "client_id": "103977578360476760096",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/googlespeechservice%40speechtestnuance.iam.gserviceaccount.com"
+}
