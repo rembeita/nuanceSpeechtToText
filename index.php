@@ -1,5 +1,5 @@
 <?php
-function processResults($m)
+function processResultsSync($m)
 {
         //$status = array_values(json_decode($respResults, true))[1]["status"];
         //$process_respResults = array_values(json_decode($respResults, true))[1]["name"];
@@ -11,7 +11,31 @@ function processResults($m)
         <div class="element-input">
                         <div class="item-cont" align="center">
                                 <table>
-                                <tr><td><font size=6><b>Translation</b></font></td></tr>
+                                <tr><td><font size=6><b>Transcribe</b></font></td></tr>
+                                </table>
+                        </div>
+        </div>
+        <div class="element-input">
+                        <div class="item-cont" align="center">
+                                <table>
+                                <tr><td>' . $result . '</td></tr>
+                                </table>
+                        </div>
+        </div>
+        ';
+        // Done.
+}
+function processResultsASync($m)
+{
+        //$status = array_values(json_decode($respResults, true))[1]["status"];
+        //$process_respResults = array_values(json_decode($respResults, true))[1]["name"];
+        // We'll simply display the response details in an HTML table
+	$result=$m;
+        echo '
+        <div class="element-input">
+                        <div class="item-cont" align="center">
+                                <table>
+                                <tr><td><font size=6><b>Transcribe</b></font></td></tr>
                                 </table>
                         </div>
         </div>
@@ -72,6 +96,9 @@ getBucketFiles();
 			<div class="item-cont" align="center">
 				<input type="hidden" name="translate" value="yes">
 				<table>
+				<tr><td>Google Speech:&nbsp;</td>
+				<td><a href="https://console.cloud.google.com/storage/browser/translatespeech/?project=speechtestnuance">Google Storage</a>
+				</td></tr>
 				<tr><td>Files:&nbsp;</td><td>
 					<select name="filesbucket" style="width:220;">
 					<?php echo $listFiles; ?>
@@ -138,8 +165,12 @@ if( isset($_POST['translate']) )
         </div>';
 	
 	//Execute bash script with python program to translate audio
-	$resp_info = shell_exec(" sh script.sh $bucket_dir$audioFile $codec $rate $language");
-         processResults($resp_info);
+	//$resp_info = shell_exec(" sh script.sh $bucket_dir$audioFile $codec $rate $language");
+	//echo "sh async.sh $bucket_dir$audioFile $codec $rate $language";
+	$resp_info = shell_exec(" sh async.sh $bucket_dir$audioFile $codec $rate $language");
+	//var_dump($resp_info);
+         //processResultsSync($resp_info);
+         processResultsASync($resp_info);
 }
 ?>
 
