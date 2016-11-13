@@ -51,10 +51,10 @@ def main(speech_file, encoding, rate, language):
         speech_file: the name of the audio file.
     """
     # [START construct_request]
-    with open(speech_file, 'rb') as speech:
+#    with open(speech_file, 'rb') as speech:
         # Base64 encode the binary audio file for inclusion in the JSON
         # request.
-        speech_content = base64.b64encode(speech.read())
+#        speech_content = base64.b64encode(speech.read())
 
     service = get_speech_service()
     service_request = service.speech().syncrecognize(
@@ -69,7 +69,7 @@ def main(speech_file, encoding, rate, language):
                 'languageCode': language,  # a BCP-47 language tag
             },
             'audio': {
-                'content': speech_content.decode('UTF-8')
+                'uri': speech_file
                 }
             })
     # [END construct_request]

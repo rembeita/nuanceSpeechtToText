@@ -25,25 +25,6 @@ function processResults($m)
         ';
         // Done.
 }
-
-function getBucketFiles()
-{
-	 global $listFiles;
-	 $bucket_list = shell_exec("sh getlist.sh");
-	 $json_bucket=json_decode($bucket_list, true);
-//                $selected = ($language == $v[1]) ? "selected" : "";
-//                $languages_dropdown .= '<option '. $selected .' value="'. $v[1] .'">'. $v[0] .' - '. $v[1] .'</option>';
-	 //var_dump($json_bucket);
-//                                                <OPTION VALUE="LINEAR16">LINEAR16-PCM</OPTION>
- //                                               <OPTION VALUE="FLAC">FLAC</OPTION>
-
-	foreach( $json_bucket as $key=>$val)
-    	{	
-        	 $listFiles .= '<option value="' . $val["name"] .'">'. $val["name"] . '</option>';
-    	}     
-}
-getBucketFiles();
-
 ?>
 
 
@@ -72,11 +53,7 @@ getBucketFiles();
 			<div class="item-cont" align="center">
 				<input type="hidden" name="translate" value="yes">
 				<table>
-				<tr><td>Files:&nbsp;</td><td>
-					<select name="filesbucket" style="width:220;">
-					<?php echo $listFiles; ?>
-					</select>
-				</td></tr>
+				<tr><td>Audio File: </td><td><input type="file" name="audioFile"></td></tr>
 				<!-- language -->
 				<tr><td colspan="2"><font color="green"><br>Select the Language and Codec.</font></td></tr>
 				<tr><td>Language:&nbsp;</td><td>
@@ -116,8 +93,8 @@ if( isset($_POST['translate']) )
 	$codec = $_POST["codec"];
 	$rate = $_POST["rate"];
 	$uploaded_file = $_FILES["audioFile"]["tmp_name"];
-	$audioFile = $_POST["filesbucket"];
-	$bucket_dir="gs://translatespeech/";
+	$audioFile = $_FILES["audioFile"];
+
         echo '
         <div class="element-input">
                         <div class="item-cont" align="center">
@@ -129,16 +106,23 @@ if( isset($_POST['translate']) )
         <div class="element-input">
                         <div class="item-cont" align="center">
                                 <table>
-                                <tr><td>Audio File: ' . $audioFile . ' </td></tr>
+                                <tr><td>Audio File: </td></tr>
                                 <tr><td>Language: ' . $language . ' </td></tr>
                                 <tr><td>Codec: ' . $codec . '</td></tr>
                                 <tr><td>Rate: ' . $rate . ' </td></tr>
                                 </table>
                         </div>
         </div>';
-	
-	//Execute bash script with python program to translate audio
-	$resp_info = shell_exec(" sh script.sh $bucket_dir$audioFile $codec $rate $language");
+         $contentLength = (strlen($audioFile['name']) > 0) ?  $audioFile['size'] : 0;
+         if( !$contentLength )
+       	 {
+           	echo "<br><br>Please provide an audio file<br><br>";
+         }
+         else
+         {
+		//Execute bash script with python program to translate audio
+		$resp_info = shell_exec(" sh script.sh $uploaded_file $codec $rate $language");
+	 }
          processResults($resp_info);
 }
 ?>
